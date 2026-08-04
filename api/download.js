@@ -31,10 +31,10 @@ module.exports = async (req, res) => {
             });
         }
 
-        if (!process.env.SAVENOW_API_KEY) {
+        if (!process.env.savenow_api_key) {
             return res.status(500).json({
                 success: false,
-                message: "SAVENOW_API_KEY is not configured."
+                message: "savenow_api_key is not configured."
             });
         }
 
@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
                 params: {
                     url,
                     format,
-                    apikey: process.env.SAVENOW_API_KEY
+                    apikey: process.env.savenow_api_key
                 },
                 timeout: 30000,
                 headers: {
